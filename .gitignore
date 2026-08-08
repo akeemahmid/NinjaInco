@@ -6,7 +6,7 @@ node_modules/
 .env
 .env.*
 !.env.sample
-!.env.example
+# !.env.example
 
 # Frontend local environment
 frontend/.env.local
