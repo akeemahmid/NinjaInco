@@ -1,0 +1,9 @@
+[
+  {"type":"function","name":"duel","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contract IDuelExperience"}],"stateMutability":"view"},
+  {"type":"function","name":"evaluatePromotion","inputs":[],"outputs":[],"stateMutability":"nonpayable"},
+  {"type":"function","name":"finalizePromotion","inputs":[{"name":"player","type":"address","internalType":"address"},{"name":"decryption","type":"tuple","internalType":"struct DecryptionAttestation","components":[{"name":"handle","type":"bytes32","internalType":"bytes32"},{"name":"value","type":"bytes32","internalType":"bytes32"}]},{"name":"signatures","type":"bytes[]","internalType":"bytes[]"}],"outputs":[],"stateMutability":"nonpayable"},
+  {"type":"function","name":"getPendingEligibility","inputs":[{"name":"player","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"bytes32","internalType":"ebool"}],"stateMutability":"view"},
+  {"type":"function","name":"rank","inputs":[{"name":"","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"uint8","internalType":"enum NinjaIncoPromotion.Rank"}],"stateMutability":"view"},
+  {"type":"event","name":"PlayerPromoted","inputs":[{"name":"player","type":"address","indexed":true,"internalType":"address"},{"name":"rank","type":"uint8","indexed":false,"internalType":"enum NinjaIncoPromotion.Rank"}],"anonymous":false},
+  {"type":"event","name":"PromotionEvaluated","inputs":[{"name":"player","type":"address","indexed":true,"internalType":"address"}],"anonymous":false}
+]

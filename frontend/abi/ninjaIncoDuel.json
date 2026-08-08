@@ -1,0 +1,11 @@
+[
+  {"type":"constructor","inputs":[{"name":"registryAddress","type":"address","internalType":"address"}],"stateMutability":"nonpayable"},
+  {"type":"function","name":"duel","inputs":[{"name":"encryptedTechnique","type":"bytes","internalType":"bytes"}],"outputs":[{"name":"duelId","type":"uint256","internalType":"uint256"}],"stateMutability":"payable"},
+  {"type":"function","name":"getMyDuel","inputs":[{"name":"duelId","type":"uint256","internalType":"uint256"}],"outputs":[{"name":"","type":"bytes32","internalType":"euint256"},{"name":"","type":"bytes32","internalType":"euint256"},{"name":"","type":"bytes32","internalType":"euint256"}],"stateMutability":"view"},
+  {"type":"function","name":"getMyExperience","inputs":[],"outputs":[{"name":"","type":"bytes32","internalType":"euint256"}],"stateMutability":"view"},
+  {"type":"function","name":"lastDuelId","inputs":[{"name":"","type":"address","internalType":"address"}],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"nextDuelId","inputs":[],"outputs":[{"name":"","type":"uint256","internalType":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"playerRegistry","inputs":[],"outputs":[{"name":"","type":"address","internalType":"contract IDuelPlayerRegistry"}],"stateMutability":"view"},
+  {"type":"event","name":"DuelCompleted","inputs":[{"name":"player","type":"address","indexed":true,"internalType":"address"},{"name":"duelId","type":"uint256","indexed":true,"internalType":"uint256"}],"anonymous":false},
+  {"type":"error","name":"CallFailedAfterFeeRefresh","inputs":[]},{"type":"error","name":"DuelNotFound","inputs":[]},{"type":"error","name":"InsufficientFees","inputs":[]},{"type":"error","name":"InvalidTechnique","inputs":[]},{"type":"error","name":"PlayerNotRegistered","inputs":[]}
+]

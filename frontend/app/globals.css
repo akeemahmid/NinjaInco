@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 95%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 95%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 0 0% 15%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 15%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 15%;
+    --destructive: 0 0% 35%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 15%;
+    --radius: 0;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 90%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 90%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 0 0% 85%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 50%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 85%;
+    --destructive: 0 0% 60%;
+    --destructive-foreground: 0 0% 4%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 85%;
+    --radius: 0;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    letter-spacing: -0.025em;
+  }
+
+  button, a, input, select {
+    outline-offset: 3px;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+  }
+}
+
+@layer components {
+  .page-shell { @apply mx-auto w-full max-w-6xl px-5 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16; }
+  .page-shell-narrow { @apply mx-auto w-full max-w-3xl px-5 py-10 sm:px-6 sm:py-14; }
+  .eyebrow { @apply text-xs font-medium uppercase tracking-[0.24em] text-muted-foreground; }
+  .page-title { @apply text-3xl font-semibold tracking-tight sm:text-4xl; }
+  .page-description { @apply mt-3 max-w-2xl text-sm leading-6 text-muted-foreground sm:text-base; }
+  .surface { @apply border border-border/80 bg-card/70 shadow-[0_18px_55px_-38px_hsl(var(--foreground)/0.55)] backdrop-blur-sm; }
+  .surface-hover { @apply transition-all duration-300 hover:-translate-y-1 hover:border-foreground/25 hover:shadow-[0_24px_70px_-38px_hsl(var(--foreground)/0.7)]; }
+  .btn-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 bg-foreground px-5 py-2.5 text-sm font-medium text-background shadow-sm transition-all hover:-translate-y-0.5 hover:opacity-90 hover:shadow-lg disabled:pointer-events-none disabled:opacity-40; }
+  .btn-secondary { @apply inline-flex min-h-11 items-center justify-center gap-2 border border-border bg-background/70 px-5 py-2.5 text-sm font-medium transition-all hover:-translate-y-0.5 hover:border-foreground/35 hover:bg-card disabled:pointer-events-none disabled:opacity-40; }
+  .field { @apply min-h-11 w-full border border-border bg-background/80 px-3 py-2 text-sm transition-colors hover:border-foreground/25 focus:border-foreground/50; }
+}
+
+::selection {
+  background: hsl(var(--primary) / 0.3);
+}
+
+/* Smooth transitions for interactive elements */
+@layer base {
+  button,
+  input,
+  a {
+    transition-property: color, background-color, border-color, opacity;
+    transition-duration: 150ms;
+    transition-timing-function: ease;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}

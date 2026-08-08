@@ -1,0 +1,2 @@
+import { AttributeReveal } from "@/components/AttributeReveal";
+export default function AttributesPage() { return <main className="page-shell-narrow min-h-[calc(100vh-65px)]"><div className="mb-8"><p className="eyebrow">Private profile</p><h1 className="page-title mt-3">Confidential Character</h1><p className="page-description">Private ninja attributes protected by Inco access permissions.</p></div><AttributeReveal /></main>; }

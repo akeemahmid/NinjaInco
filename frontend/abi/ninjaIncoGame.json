@@ -1,0 +1,56 @@
+[
+  {
+    "type": "function",
+    "name": "getEncryptedTechnique",
+    "inputs": [],
+    "outputs": [{ "name": "", "type": "bytes32", "internalType": "euint256" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPublicProfile",
+    "inputs": [{ "name": "wallet", "type": "address", "internalType": "address" }],
+    "outputs": [
+      { "name": "playerWallet", "type": "address", "internalType": "address" },
+      { "name": "displayName", "type": "string", "internalType": "string" },
+      { "name": "village", "type": "uint8", "internalType": "enum NinjaIncoGame.Village" },
+      { "name": "createdAt", "type": "uint256", "internalType": "uint256" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isRegistered",
+    "inputs": [{ "name": "wallet", "type": "address", "internalType": "address" }],
+    "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "registerPlayer",
+    "inputs": [
+      { "name": "displayName", "type": "string", "internalType": "string" },
+      { "name": "village", "type": "uint8", "internalType": "uint8" },
+      { "name": "encryptedTechnique", "type": "bytes", "internalType": "bytes" }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "event",
+    "name": "PlayerRegistered",
+    "inputs": [
+      { "name": "wallet", "type": "address", "indexed": true, "internalType": "address" },
+      { "name": "displayName", "type": "string", "indexed": false, "internalType": "string" },
+      { "name": "village", "type": "uint8", "indexed": false, "internalType": "enum NinjaIncoGame.Village" },
+      { "name": "createdAt", "type": "uint256", "indexed": false, "internalType": "uint256" }
+    ],
+    "anonymous": false
+  },
+  { "type": "error", "name": "AlreadyRegistered", "inputs": [] },
+  { "type": "error", "name": "CallFailedAfterFeeRefresh", "inputs": [] },
+  { "type": "error", "name": "EmptyDisplayName", "inputs": [] },
+  { "type": "error", "name": "InsufficientFees", "inputs": [] },
+  { "type": "error", "name": "InvalidVillage", "inputs": [] },
+  { "type": "error", "name": "NotRegistered", "inputs": [] }
+]

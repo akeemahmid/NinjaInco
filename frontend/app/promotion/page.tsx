@@ -1,0 +1,2 @@
+import { PromotionCeremony } from "@/components/PromotionCeremony";
+export default function PromotionPage() { return <main className="page-shell-narrow min-h-[calc(100vh-65px)]"><div className="mb-8 text-center"><p className="eyebrow">The council</p><h1 className="page-title mt-3">Promotion Ceremony</h1><p className="page-description mx-auto">The first threshold on the ninja path.</p></div><PromotionCeremony /></main>; }
