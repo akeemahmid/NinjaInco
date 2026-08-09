@@ -1,0 +1,48 @@
+{
+  "name": "contracts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "compile": "forge build",
+    "test": "forge test -vvv",
+    "deploy:v2:base-sepolia": "forge script script/DeployNinjaIncoV2.s.sol --rpc-url base_sepolia --broadcast",
+    "deploy:ninja:local": "forge script script/DeployNinjaInco.s.sol --rpc-url http://localhost:8545 --broadcast",
+    "deploy:ninja:testnet": "forge script script/DeployNinjaInco.s.sol --rpc-url base_sepolia --broadcast",
+    "deploy:ninja:mainnet": "forge script script/DeployNinjaInco.s.sol --rpc-url base --broadcast",
+    "deploy:attributes:local": "forge script script/DeployNinjaIncoAttributes.s.sol --rpc-url http://localhost:8545 --broadcast",
+    "deploy:attributes:testnet": "forge script script/DeployNinjaIncoAttributes.s.sol --rpc-url base_sepolia --broadcast",
+    "deploy:attributes:mainnet": "forge script script/DeployNinjaIncoAttributes.s.sol --rpc-url base --broadcast",
+    "deploy:duel:local": "forge script script/DeployNinjaIncoDuel.s.sol --rpc-url http://localhost:8545 --broadcast",
+    "deploy:duel:testnet": "forge script script/DeployNinjaIncoDuel.s.sol --rpc-url base_sepolia --broadcast",
+    "deploy:duel:mainnet": "forge script script/DeployNinjaIncoDuel.s.sol --rpc-url base --broadcast",
+    "deploy:promotion:local": "forge script script/DeployNinjaIncoPromotion.s.sol --rpc-url http://localhost:8545 --broadcast",
+    "deploy:promotion:testnet": "forge script script/DeployNinjaIncoPromotion.s.sol --rpc-url base_sepolia --broadcast",
+    "deploy:promotion:mainnet": "forge script script/DeployNinjaIncoPromotion.s.sol --rpc-url base --broadcast",
+    "node": "docker compose up"
+  },
+  "dependencies": {
+    "@inco/lightning": "1.0.0",
+    "@openzeppelin/contracts": "^5.4.0",
+    "@openzeppelin/contracts-upgradeable": "^5.4.0",
+    "ds-test": "github:dapphub/ds-test#e282159d5170298eb2455a6c05280ab5a73a4ef0",
+    "forge-std": "github:foundry-rs/forge-std#2f05b3001ed9d74b171d17eac80b3765ce186a76",
+    "@safe-global/safe-smart-account": "github:safe-global/safe-smart-account#dc437e8fba8b4805d76bcbd1c668c9fd3d1e83be"
+  },
+  "overrides": {
+    "forge-std": "github:foundry-rs/forge-std#2f05b3001ed9d74b171d17eac80b3765ce186a76",
+    "ds-test": "github:dapphub/ds-test#e282159d5170298eb2455a6c05280ab5a73a4ef0",
+    "@safe-global/safe-smart-account": "github:safe-global/safe-smart-account#dc437e8fba8b4805d76bcbd1c668c9fd3d1e83be"
+  },
+  "resolutions": {
+    "forge-std": "github:foundry-rs/forge-std#2f05b3001ed9d74b171d17eac80b3765ce186a76",
+    "ds-test": "github:dapphub/ds-test#e282159d5170298eb2455a6c05280ab5a73a4ef0",
+    "@safe-global/safe-smart-account": "github:safe-global/safe-smart-account#dc437e8fba8b4805d76bcbd1c668c9fd3d1e83be"
+  },
+  "pnpm": {
+    "overrides": {
+      "forge-std": "github:foundry-rs/forge-std#2f05b3001ed9d74b171d17eac80b3765ce186a76",
+      "ds-test": "github:dapphub/ds-test#e282159d5170298eb2455a6c05280ab5a73a4ef0",
+      "@safe-global/safe-smart-account": "github:safe-global/safe-smart-account#dc437e8fba8b4805d76bcbd1c668c9fd3d1e83be"
+    }
+  }
+}

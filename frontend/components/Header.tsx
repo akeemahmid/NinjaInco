@@ -6,8 +6,7 @@ import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  ["Academy", "/academy"], ["Awaken", "/awakening"], ["Train", "/dojo"],
-  ["Duel", "/duel"], ["Promotion", "/promotion"], ["Technology", "/technology"],
+  ["Academy", "/"], ["Profile", "/profile"], ["Training", "/training"], ["Duel", "/duel"], ["Progression", "/progression"], ["Techniques", "/techniques"], ["Challenges", "/challenges"], ["Promotion", "/promotion"],
 ] as const;
 
 export function Header() {

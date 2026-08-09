@@ -1,0 +1,499 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "acceptOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "addTechnique",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "requiredRank",
+        "type": "uint8",
+        "internalType": "enum NinjaIncoTechniqueRegistry.Rank"
+      },
+      {
+        "name": "category",
+        "type": "uint8",
+        "internalType": "enum NinjaIncoTechniqueRegistry.Category"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getCombatRule",
+    "inputs": [
+      {
+        "name": "techniqueA",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "techniqueB",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum NinjaIncoTechniqueRegistry.OutcomeRule"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getTechnique",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple",
+        "internalType": "struct NinjaIncoTechniqueRegistry.Technique",
+        "components": [
+          {
+            "name": "id",
+            "type": "uint16",
+            "internalType": "uint16"
+          },
+          {
+            "name": "name",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "requiredRank",
+            "type": "uint8",
+            "internalType": "enum NinjaIncoTechniqueRegistry.Rank"
+          },
+          {
+            "name": "category",
+            "type": "uint8",
+            "internalType": "enum NinjaIncoTechniqueRegistry.Category"
+          },
+          {
+            "name": "enabled",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isTechniqueAvailable",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "playerRank",
+        "type": "uint8",
+        "internalType": "enum NinjaIncoTechniqueRegistry.Rank"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "pendingOwner",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "renounceOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "resolveConfidentialRule",
+    "inputs": [
+      {
+        "name": "techniqueA",
+        "type": "bytes32",
+        "internalType": "euint256"
+      },
+      {
+        "name": "techniqueB",
+        "type": "bytes32",
+        "internalType": "euint256"
+      },
+      {
+        "name": "allowedTechniqueIds",
+        "type": "uint16[]",
+        "internalType": "uint16[]"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "outcome",
+        "type": "bytes32",
+        "internalType": "euint256"
+      },
+      {
+        "name": "validA",
+        "type": "bytes32",
+        "internalType": "ebool"
+      },
+      {
+        "name": "validB",
+        "type": "bytes32",
+        "internalType": "ebool"
+      }
+    ],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "resolvePublicRule",
+    "inputs": [
+      {
+        "name": "techniqueA",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "techniqueB",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum NinjaIncoTechniqueRegistry.OutcomeRule"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setCombatRule",
+    "inputs": [
+      {
+        "name": "techniqueA",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "techniqueB",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "rule",
+        "type": "uint8",
+        "internalType": "enum NinjaIncoTechniqueRegistry.OutcomeRule"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setTechniqueEnabled",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "enabled",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "techniqueExists",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "transferOwnership",
+    "inputs": [
+      {
+        "name": "newOwner",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "CombatRuleSet",
+    "inputs": [
+      {
+        "name": "techniqueA",
+        "type": "uint16",
+        "indexed": true,
+        "internalType": "uint16"
+      },
+      {
+        "name": "techniqueB",
+        "type": "uint16",
+        "indexed": true,
+        "internalType": "uint16"
+      },
+      {
+        "name": "rule",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum NinjaIncoTechniqueRegistry.OutcomeRule"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferStarted",
+    "inputs": [
+      {
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      {
+        "name": "previousOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "newOwner",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TechniqueAdded",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "indexed": true,
+        "internalType": "uint16"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "requiredRank",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum NinjaIncoTechniqueRegistry.Rank"
+      },
+      {
+        "name": "category",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum NinjaIncoTechniqueRegistry.Category"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TechniqueStatusChanged",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "indexed": true,
+        "internalType": "uint16"
+      },
+      {
+        "name": "enabled",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "CombatRuleAlreadyDefined",
+    "inputs": [
+      {
+        "name": "techniqueA",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "techniqueB",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "CombatRuleNotDefined",
+    "inputs": [
+      {
+        "name": "techniqueA",
+        "type": "uint16",
+        "internalType": "uint16"
+      },
+      {
+        "name": "techniqueB",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "EmptyTechniqueName",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "OwnableInvalidOwner",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OwnableUnauthorizedAccount",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "TechniqueAlreadyExists",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "TechniqueNotFound",
+    "inputs": [
+      {
+        "name": "id",
+        "type": "uint16",
+        "internalType": "uint16"
+      }
+    ]
+  }
+]

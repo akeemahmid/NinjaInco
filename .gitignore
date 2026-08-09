@@ -1,44 +1,80 @@
+# ============================================================
 # Dependencies
+# ============================================================
 node_modules/
 .pnpm-store/
 
-# Environment variables
+# ============================================================
+# Environment / Secrets
+# ============================================================
 .env
 .env.*
 !.env.sample
-# !.env.example
+!.env.example
 
 # Frontend local environment
 frontend/.env.local
 frontend/.env.local.*
+!frontend/.env.example
+!frontend/.env.sample
 
+# Contracts local environment
+contracts/.env
+contracts/.env.*
+!contracts/.env.example
+!contracts/.env.sample
+
+# ============================================================
+# Next.js
+# ============================================================
+frontend/.next/
+frontend/out/
+
+# ============================================================
 # Build outputs
+# ============================================================
 dist/
 build/
 
-# Next.js
-.next/
-
-# Foundry
+# ============================================================
+# Foundry generated files
+# ============================================================
 contracts/out/
 contracts/cache/
 contracts/cache_forge/
+contracts/broadcast/
+# ============================================================
+# Foundry coverage / gas reports
+# ============================================================
+contracts/coverage/
+contracts/gas-report.txt
 
-# Coverage
-coverage/
-
-# IDE
+# ============================================================
+# IDE / Editor
+# ============================================================
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# OS
+# ============================================================
+# Operating System
+# ============================================================
 .DS_Store
 Thumbs.db
 
+# ============================================================
 # Logs
+# ============================================================
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ============================================================
+# Temporary / Backup files
+# ============================================================
+*.tmp
+*.temp
+*.bak
+*~
