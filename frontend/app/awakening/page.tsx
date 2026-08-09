@@ -1,13 +1,8 @@
 import { AwakeningCeremony } from "@/components/AwakeningCeremony";
+import { GameWorld } from "@/components/game/GameWorld";
 
 export default function AwakeningPage() {
   return (
-    <main className="page-shell-narrow min-h-[calc(100vh-65px)]">
-      <div className="mb-8 text-center">
-        <p className="eyebrow">The shrine</p><h1 className="page-title mt-3">Awakening Ceremony</h1>
-        <p className="text-sm text-muted-foreground">Enter the shrine and discover the shape of your hidden potential.</p>
-      </div>
-      <AwakeningCeremony />
-    </main>
+    <GameWorld eyebrow="The hidden shrine" title="Awakening Ceremony" description="Discover the shape of the potential sealed within you."><AwakeningCeremony /></GameWorld>
   );
 }

@@ -46,10 +46,10 @@ export function AcademyDashboard() {
 
   return (
     <div className="space-y-8">
-      <section className="surface bg-gradient-to-br from-card/90 to-background p-6 md:p-8">
+      <section className="dojo-panel overflow-hidden p-6 md:p-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="mb-1 text-xs uppercase tracking-wider text-muted-foreground">academy member</p>
+            <p className="eyebrow">academy member</p>
             <h2 className="text-2xl font-medium">{profile.displayName}</h2>
             <p className="mt-2 text-sm text-muted-foreground">{VILLAGES[profile.village] ?? "Unknown"} village</p>
           </div>
@@ -60,10 +60,12 @@ export function AcademyDashboard() {
         </div>
       </section>
 
+      <section className="game-card flex flex-col justify-between gap-5 border-violet-300/20 bg-[radial-gradient(circle_at_85%_15%,rgba(133,102,194,.2),transparent_35%)] p-6 sm:flex-row sm:items-center"><div><p className="eyebrow">next objective</p><h2 className="mt-2 text-xl font-medium">{!attributes.hasAttributes ? "Awaken your hidden potential" : promotion.rank === 1 ? "The path continues" : "Face the Sensei"}</h2><p className="mt-2 text-sm text-muted-foreground">{!attributes.hasAttributes ? "Enter the shrine to reveal your confidential attributes." : promotion.rank === 1 ? "Explore the academy and prepare for the next rank." : "A confidential exam awaits in the moonlit dojo."}</p></div><Link className="btn-primary shrink-0" href={!attributes.hasAttributes ? "/awakening" : promotion.rank === 1 ? "/academy" : "/duel"}>{!attributes.hasAttributes ? "Begin awakening →" : promotion.rank === 1 ? "View academy →" : "Enter exam →"}</Link></section>
+
       <section className="grid gap-3 sm:grid-cols-2">
         {actions.map((action) => (
           (
-            <Link className="surface surface-hover group p-5" href={action.href} key={action.title}>
+            <Link className="game-card group p-5" href={action.href} key={action.title}>
               <div className="flex items-start justify-between gap-3">
                 <div><h3 className="text-base">{action.title}</h3><p className="mt-2 text-xs text-muted-foreground">{action.description}</p></div>
                 <span className="text-xs text-muted-foreground group-hover:text-foreground">open →</span>

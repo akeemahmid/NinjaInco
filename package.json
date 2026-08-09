@@ -44,5 +44,8 @@
       "ds-test": "github:dapphub/ds-test#e282159d5170298eb2455a6c05280ab5a73a4ef0",
       "@safe-global/safe-smart-account": "github:safe-global/safe-smart-account#dc437e8fba8b4805d76bcbd1c668c9fd3d1e83be"
     }
+  },
+  "dependencies": {
+    "@reown/appkit-utils": "^1.8.23"
   }
 }

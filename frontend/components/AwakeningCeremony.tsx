@@ -53,7 +53,7 @@ function AwakeningResults({ attributes }: { attributes: RevealedAttributes }) {
         <p className="mt-2 text-sm text-muted-foreground">The shrine reveals only the shape of your potential.</p>
       </div>
 
-      <div className="space-y-5 border border-border bg-card/40 p-5 md:p-6">
+      <div className="game-card space-y-5 p-5 md:p-6">
         <AttributeBar label="Power" value={attributes.power} />
         <AttributeBar label="Speed" value={attributes.speed} />
         <AttributeBar label="Focus" value={attributes.focus} />
@@ -125,12 +125,12 @@ export function AwakeningCeremony() {
   }
   if (ceremonyStarted) {
     return (
-      <section className="flex min-h-[360px] flex-col items-center justify-center border border-border bg-card/30 px-6 py-12 text-center">
+      <section className="dojo-panel flex min-h-[400px] flex-col items-center justify-center px-6 py-12 text-center">
         <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-foreground/30">
           <div className="h-10 w-10 animate-pulse rounded-full bg-foreground/15" />
         </div>
         <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">ceremony in progress</p>
-        <p className="mt-4 text-lg">{CEREMONY_STEPS[step]}</p>
+        <p className="mt-4 text-lg">{attributes.isDecrypting ? "Attesting your awakened attributes..." : attributes.isEncrypting ? "Sealing hidden potential..." : attributes.stage === "Waiting for Wallet..." ? "Awaiting authorization..." : attributes.stage === "Complete." ? "Awakening complete. Preparing your reveal..." : CEREMONY_STEPS[step]}</p>
         <div className="mt-8 flex gap-2">
           {CEREMONY_STEPS.map((item, index) => (
             <span className={`h-1.5 w-8 transition-colors duration-500 ${index <= step ? "bg-foreground" : "bg-muted"}`} key={item} />
@@ -143,7 +143,7 @@ export function AwakeningCeremony() {
   }
 
   return (
-    <section className="border border-border bg-card/30 p-6 text-center md:p-10">
+    <section className="dojo-panel p-6 text-center md:p-10">
       <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">the ancient shrine</p>
       <h2 className="mt-5 text-2xl font-medium">The stone remembers every ninja.</h2>
       <div className="mx-auto mt-5 max-w-lg space-y-3 text-sm leading-6 text-muted-foreground">

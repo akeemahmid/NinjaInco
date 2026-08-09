@@ -65,7 +65,7 @@ export function DojoTraining() {
   }
   if (trainingStarted && attributes.txConfirmed && animationComplete) {
     return (
-      <section className="border border-border bg-card/30 p-8 text-center md:p-12">
+      <section className="dojo-panel p-8 text-center md:p-12">
         <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">lesson complete</p>
         <h2 className="mt-5 text-2xl font-medium">Training Complete.</h2>
         <p className="mt-3 text-sm text-muted-foreground">You feel stronger.</p>
@@ -75,7 +75,7 @@ export function DojoTraining() {
   }
   if (trainingStarted) {
     return (
-      <section className="flex min-h-[360px] flex-col items-center justify-center border border-border bg-card/30 p-8 text-center">
+      <section className="dojo-panel flex min-h-[400px] flex-col items-center justify-center p-8 text-center">
         <div className="relative mb-8 h-24 w-24">
           <div className="absolute inset-0 animate-ping rounded-full border border-foreground/20" />
           <div className="absolute inset-4 animate-pulse rounded-full bg-foreground/10" />
@@ -91,7 +91,7 @@ export function DojoTraining() {
   }
 
   return (
-    <section className="border border-border bg-card/30 p-6 md:p-10">
+    <section className="dojo-panel p-6 md:p-10">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
         <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-border bg-background text-3xl">師</div>
         <div>

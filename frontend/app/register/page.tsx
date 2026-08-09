@@ -1,11 +1,8 @@
 import { PlayerRegistration } from "@/components/PlayerRegistration";
+import { GameWorld } from "@/components/game/GameWorld";
 
 export default function RegisterPage() {
   return (
-    <main className="page-shell-narrow min-h-[calc(100vh-65px)]">
-      <p className="eyebrow">Registration</p><h1 className="page-title mt-3">Create your ninja</h1>
-      <p className="page-description mb-8">Your name and village are public. Your starting technique is encrypted with Inco.</p>
-      <PlayerRegistration />
-    </main>
+    <GameWorld eyebrow="The first oath" title="Create your ninja identity" description="Choose the name the villages will know—and the technique only you may reveal."><PlayerRegistration /></GameWorld>
   );
 }

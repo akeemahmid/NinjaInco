@@ -48,17 +48,17 @@ export function PlayerRegistration() {
 
   if (isRegistered || txConfirmed) {
     return (
-      <div className="space-y-3 border border-border p-5">
-        <p className="text-sm">Your ninja is registered.</p>
-        <Link className="text-sm underline" href="/profile">view player profile →</Link>
+      <div className="dojo-panel space-y-5 p-8 text-center"><div className="ninja-seal"><span>忍</span></div>
+        <p className="text-xl">Your identity has been recorded.</p>
+        <Link className="btn-primary" href="/profile">View ninja profile →</Link>
       </div>
     );
   }
 
   return (
-    <form className="surface space-y-6 p-6 sm:p-8" onSubmit={submit}>
+    <form className="dojo-panel space-y-8 p-6 sm:p-9" onSubmit={submit}>
       <label className="block space-y-2 text-sm">
-        <span>display name</span>
+        <span className="eyebrow">Name known to the villages</span>
         <input
           className="field"
           maxLength={32}
@@ -68,25 +68,19 @@ export function PlayerRegistration() {
         />
       </label>
 
-      <label className="block space-y-2 text-sm">
-        <span>village (public)</span>
-        <select className="field" onChange={(event) => setVillage(Number(event.target.value))} value={village}>
-          {VILLAGES.map((name, index) => <option key={name} value={index}>{name}</option>)}
-        </select>
-      </label>
+      <fieldset><legend className="eyebrow mb-3">Choose your village · public</legend><div className="grid grid-cols-2 gap-2 sm:grid-cols-4">{VILLAGES.map((name,index)=><button className={`game-choice ${village===index ? "selected" : ""}`} key={name} onClick={()=>setVillage(index)} type="button">{name}</button>)}</div></fieldset>
 
       <fieldset className="space-y-2 text-sm">
-        <legend className="mb-2">starting technique (confidential)</legend>
+        <legend className="eyebrow mb-3">Starting technique · confidential</legend>
+        <div className="grid gap-2 sm:grid-cols-3">
         {TECHNIQUES.map((name, index) => (
-          <label className="flex items-center gap-2" key={name}>
-            <input checked={technique === index} name="technique" onChange={() => setTechnique(index)} type="radio" />
-            <span>{name}</span>
-          </label>
+          <label className={`game-choice min-h-24 cursor-pointer text-left ${technique === index ? "selected" : ""}`} key={name}><input className="sr-only" checked={technique === index} name="technique" onChange={() => setTechnique(index)} type="radio" /><span className="block text-lg">{["✦","◇","◌"][index]}</span><span className="mt-3 block">{name}</span></label>
         ))}
+        </div>
       </fieldset>
 
       <button className="btn-primary w-full" disabled={busy || !displayName.trim()} type="submit">
-        {isEncrypting ? "encrypting technique..." : isWritePending ? "registering..." : "create ninja"}
+        {isEncrypting ? "Sealing your technique..." : isWritePending ? "Awaiting authorization..." : "Create ninja identity"}
       </button>
 
       <TransactionStatus stage={stage} />
