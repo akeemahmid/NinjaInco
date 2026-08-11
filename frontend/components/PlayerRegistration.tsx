@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
+import { useRouter } from "next/navigation";
 import { TECHNIQUES, useNinjaRegistration, VILLAGES } from "@/hooks/useNinjaRegistration";
 import { TransactionStatus } from "./TransactionStatus";
 
@@ -13,6 +14,7 @@ export function PlayerRegistration() {
   const [technique, setTechnique] = useState(0);
   const { openConnectModal } = useConnectModal();
   const { address: sessionAddress, chainId } = useAccount();
+  const router = useRouter();
   const {
     address,
     isConfigured,
@@ -22,6 +24,12 @@ export function PlayerRegistration() {
     txConfirmed,
     error,
   } = useNinjaRegistration();
+
+  useEffect(() => {
+    // The receipt only proves the transaction mined; wait for the authoritative
+    // registration read to turn true before entering the Academy.
+    if (isRegistered) router.replace("/");
+  }, [isRegistered, router]);
 
   useEffect(() => {
     // Do not carry registration input, including the confidential technique choice, across sessions.

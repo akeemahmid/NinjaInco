@@ -5,6 +5,7 @@ import { Providers } from "@/components/Providers";
 import { Header } from "@/components/Header";
 import { Toaster } from "sonner";
 import { Footer } from "@/components/Footer";
+import { OnboardingGuard } from "@/components/OnboardingGuard";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ninjainco.app"),
@@ -35,7 +36,7 @@ export default function RootLayout({
       <body suppressHydrationWarning className="min-h-screen bg-background font-mono">
         <Providers>
           <Header />
-          {children}
+          <OnboardingGuard>{children}</OnboardingGuard>
           <Footer />
         </Providers>
         <Toaster

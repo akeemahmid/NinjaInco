@@ -11,6 +11,7 @@ import {
 } from "@rainbow-me/rainbowkit";
 import { ThemeProvider, useTheme } from "next-themes";
 import { activeChain } from "@/lib/network";
+import { OnboardingGuard } from "./OnboardingGuard";
 
 const queryClient = new QueryClient();
 
@@ -61,7 +62,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
-          <RainbowKitWithTheme>{children}</RainbowKitWithTheme>
+          <RainbowKitWithTheme><OnboardingGuard>{children}</OnboardingGuard></RainbowKitWithTheme>
         </QueryClientProvider>
       </WagmiProvider>
     </ThemeProvider>
